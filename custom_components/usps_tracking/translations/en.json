@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "USPS API credentials",
+        "description": "Enter the Client ID and Client Secret of an app you created on the USPS Developer Portal (developers.usps.com). Legacy Web Tools User IDs do not work.",
+        "data": {
+          "client_id": "Client ID",
+          "client_secret": "Client Secret"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-enter USPS API credentials",
+        "description": "USPS rejected the saved credentials. Enter your current Client ID and Client Secret.",
+        "data": {
+          "client_id": "Client ID",
+          "client_secret": "Client Secret"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "USPS rejected these credentials.",
+      "cannot_connect": "Could not reach USPS. Try again in a moment."
+    },
+    "abort": {
+      "already_configured": "These credentials are already set up.",
+      "reauth_successful": "Credentials updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "USPS Tracking",
+        "menu_options": {
+          "add_package": "Add a package",
+          "remove_package": "Remove packages",
+          "settings": "Polling and history settings"
+        }
+      },
+      "add_package": {
+        "title": "Add a package",
+        "description": "Pre-shipment labels may show \"Not yet in USPS system\" until the first scan.",
+        "data": {
+          "tracking_number": "Tracking number",
+          "label": "Label (optional)"
+        }
+      },
+      "remove_package": {
+        "title": "Remove packages",
+        "data": {
+          "packages": "Packages to stop tracking"
+        }
+      },
+      "settings": {
+        "title": "Polling and history settings",
+        "data": {
+          "scan_interval": "Check USPS every (minutes)",
+          "max_events": "Recent events to show per package"
+        }
+      }
+    },
+    "error": {
+      "invalid_tracking_number": "That doesn't look like a USPS tracking number.",
+      "already_tracked": "This package is already being tracked."
+    },
+    "abort": {
+      "no_packages": "There are no packages to remove."
+    }
+  },
+  "services": {
+    "add_package": {
+      "name": "Add package",
+      "description": "Start tracking a USPS package by tracking number.",
+      "fields": {
+        "tracking_number": {
+          "name": "Tracking number",
+          "description": "The USPS tracking number (spaces and dashes are ignored)."
+        },
+        "label": {
+          "name": "Label",
+          "description": "Optional friendly name."
+        }
+      }
+    },
+    "remove_package": {
+      "name": "Remove package",
+      "description": "Stop tracking a package and delete its sensor.",
+      "fields": {
+        "tracking_number": {
+          "name": "Tracking number",
+          "description": "The tracking number to remove."
+        }
+      }
+    }
+  }
+}

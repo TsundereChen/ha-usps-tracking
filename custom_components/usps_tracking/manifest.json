@@ -1,0 +1,12 @@
+{
+  "domain": "usps_tracking",
+  "name": "USPS Tracking",
+  "codeowners": ["@TsundereChen"],
+  "config_flow": true,
+  "documentation": "https://github.com/TsundereChen/ha-usps-tracking",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/TsundereChen/ha-usps-tracking/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

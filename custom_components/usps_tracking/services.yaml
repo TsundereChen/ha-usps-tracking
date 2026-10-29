@@ -1,0 +1,30 @@
+add_package:
+  name: Add package
+  description: Start tracking a USPS package by tracking number.
+  fields:
+    tracking_number:
+      name: Tracking number
+      description: The USPS tracking number (spaces and dashes are ignored).
+      required: true
+      example: "9400 1118 9922 3397 9103 90"
+      selector:
+        text:
+    label:
+      name: Label
+      description: Optional friendly name, e.g. "New keyboard".
+      required: false
+      example: "New keyboard"
+      selector:
+        text:
+
+remove_package:
+  name: Remove package
+  description: Stop tracking a package and delete its sensor.
+  fields:
+    tracking_number:
+      name: Tracking number
+      description: The tracking number to remove.
+      required: true
+      example: "9400111899223397910390"
+      selector:
+        text:
