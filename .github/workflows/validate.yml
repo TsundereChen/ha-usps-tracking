@@ -20,6 +20,8 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          # No icon yet (not using the USPS logo), so skip the brand-assets check.
+          ignore: brands
 
   tests:
     runs-on: ubuntu-latest
